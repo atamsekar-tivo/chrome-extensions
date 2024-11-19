@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Site Blocker</title>
+  <style>
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 460px;
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+      overflow: auto;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+    h1 {
+      font-size: 24px;
+      color: #1a73e8;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    input[type="text"], input[type="number"], select {
+      width: 70%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      margin-right: 10px;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #1a73e8; /* Matching the theme color */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      animation: pulse 2s infinite; /* Pulse animation */
+    }
+    button:hover {
+      background-color: #005cbf; /* Darker shade for hover */
+      animation: bounce 1s infinite; /* Bounce animation on hover */
+    }
+    button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px;
+      cursor: pointer;
+      width: 50%;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+    }
+    .tab.active {
+      border-bottom: 2px solid #1a73e8;
+      font-weight: bold;
+    }
+    #status-message, #focus-status-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #d93025;
+    }
+    #block-sites, #focus-mode {
+      display: none;
+    }
+    #blocked-sites-list, #focus-blocked-sites-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+      max-height: 200px;
+      overflow: auto;
+    }
+    #blocked-sites-list li, #focus-blocked-sites-list li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+    #blocked-sites-list li:hover, #focus-blocked-sites-list li:hover {
+      background-color: #f1f3f4;
+    }
+    #timer {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="blocker48.png" alt="Blocker Icon" class="icon">
+    <h1>Advanced Site Blocker</h1>
+    <div class="tabs">
+      <div id="block-sites-tab" class="tab active">Block Sites</div>
+      <div id="focus-mode-tab" class="tab">Focus Mode</div>
+    </div>
+    <div id="block-sites">
+      <div class="input-group">
+        <input type="text" id="site-url" placeholder="Enter URL" list="site-suggestions">
+        <button id="block-button">
+          <img src="https://img.icons8.com/fluent/48/000000/lock-2.png" alt="Block Icon"> <!-- New Icon -->
+          Block
+        </button>
+        <datalist id="site-suggestions"></datalist>
+      </div>
+      <div id="status-message"></div>
+      <div id="blocked-list">
+        <h2>Blocked Sites:</h2>
+        <ul id="blocked-sites-list"></ul>
+      </div>
+    </div>
+    <div id="focus-mode">
+      <div class="input-group">
+        <input type="text" id="focus-site-url" placeholder="Enter URL" list="focus-site-suggestions">
+        <input type="number" id="focus-time" placeholder="Minutes">
+        <button id="focus-block-button">
+          <img src="https://img.icons8.com/fluent/48/000000/time-management.png" alt="Timer Icon"> <!-- New Icon -->
+          Start Focus Mode
+        </button>
+        <datalist id="focus-site-suggestions"></datalist>
+      </div>
+      <div id="focus-status-message"></div>
+      <div id="timer"></div>
+      <div id="focus-blocked-list">
+        <h2>Focus Mode Blocked Sites:</h2>
+        <ul id="focus-blocked-sites-list"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

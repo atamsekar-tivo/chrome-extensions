@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Advanced Site Blocker",
+    "version": "1.0",
+    "description": "Blocks specified websites with advanced features",
+    "permissions": ["declarativeNetRequest", "activeTab", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "*://*/*"
+    ],
+    "icons": {
+      "48": "blocker48.png",
+      "128": "blocker128.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "blocker48.png"
+      }
+    }
+  }
+  

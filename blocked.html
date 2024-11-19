@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Denied</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 40px 20px;
+      max-width: 600px;
+      width: 100%;
+      margin: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero-image {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      60% { transform: translateY(-10px); }
+    }
+    .four_zero_four_bg {
+      background-image: url('https://media.tenor.com/bnG9NZdIQe4AAAAi/pudgy-pudgypenguin.gif');
+      height: 200px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-bottom: 20px;
+    }
+    .contant_box_404 {
+      padding-top: 20px;
+    }
+    .contant_box_404 h3 {
+      font-size: 24px;
+      color: #d93025;
+      margin-bottom: 10px;
+    }
+    .contant_box_404 p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .link_404 {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1a73e8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .link_404:hover {
+      background: #005cbf;
+    }
+  </style>
+</head>
+<body>
+  <section class="page_404">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            <div class="four_zero_four_bg">
+              <!-- Animated drawing-style hero image -->
+            </div>
+            <div class="contant_box_404">
+              <h1 class="text-center">Access Denied</h1>
+              <h3 class="h2">Looks like you need to get back to work!</h3>
+              <p>The site you are trying to access has been blocked.</p>
+              <p>Please close this tab manually.</p>
+              <button class="link_404" id="close-tab-button">Close Tab</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
